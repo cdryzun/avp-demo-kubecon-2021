@@ -2,15 +2,15 @@ apiVersion: apps.kruise.io/v1alpha1
 kind: ResourceDistribution
 metadata:
   name: sample
+  annotations:
+    avp.kubernetes.io/path: "secret/data/my-redis"
+    stats: "1"
 spec:
   resource:
     apiVersion: v1
     kind: Secret
     metadata:
       name: my-redis
-      annotations: 
-        avp.kubernetes.io/path: "secret/data/my-redis"
-        stats: "1"
     type: Opaque
     stringData:
       redis-password: <password>
