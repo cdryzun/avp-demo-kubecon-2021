@@ -1,0 +1,27 @@
+apiVersion: apps.kruise.io/v1alpha1
+kind: ResourceDistribution
+metadata:
+  name: sample
+spec:
+  resource:
+    apiVersion: v1
+    kind: Secret
+    metadata:
+      name: my-redis
+      annotations: 
+        avp.kubernetes.io/path: "secret/data/my-redis"
+        stats: "1"
+    type: Opaque
+    stringData:
+      redis-password: <password>
+  targets:
+    # excludedNamespaces:
+    #   list:
+    #   - name: ns-3
+    # includedNamespaces:
+    #   list:
+    #   - name: ns-1
+    #   - name: ns-4
+    namespaceLabelSelector:
+      matchLabels:
+        group: test
