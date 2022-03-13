@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc 
   project: default
   source:
-    repoURL: 'https://github.com/jkayani/avp-demo-kubecon-2021'
+    repoURL: 'https://github.com/cdryzun/avp-demo-kubecon-2021'
     targetRevision: HEAD
     path: apps/git/nginx/manifests
 
