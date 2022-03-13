@@ -21,6 +21,8 @@ spec:
           enabled: true
           existingSecret: my-redis
           existingSecretPasswordKey: redis-password
+        global:
+          storageClass: nfs-retain
   syncPolicy:
     automated:
       prune: true
